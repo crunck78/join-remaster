@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/crunck78/join-remaster/issues"
   },
-  "homepage": "https://github.com/crunck78/join-remaster#readme"
+  "homepage": "https://github.com/crunck78/join-remaster#readme",
+  "dependencies": {
+    "firebase": "^8.1.2"
+  }
 }
