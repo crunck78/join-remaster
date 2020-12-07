@@ -5,13 +5,9 @@ var uiConfig = {
     callbacks: {
       signInSuccessWithAuthResult: function(authResult, redirectUrl) {
         // User successfully signed in.
-        var user = authResult.user;
-        var isNewUser = authResult.additionalUserInfo.isNewUser;
-        console.log("Auth result: ",authResult);
-
         // Return type determines whether we continue the redirect automatically
         // or whether we leave that to developer to handle.
-        return true;
+        return false;
       },
       uiShown: function() {
         // The widget is rendered.
@@ -19,7 +15,7 @@ var uiConfig = {
         document.getElementById('loader').style.display = 'none';
       }
     },
-    signInSuccessUrl: 'addTask.html',
+    signInSuccessUrl: '/addTask',
     signInOptions: [
        {
         provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
@@ -33,7 +29,3 @@ var uiConfig = {
     // Privacy policy url.
     privacyPolicyUrl: '<your-privacy-policy-url>'
   };
-
-  // The start method will wait until the DOM is loaded.
-ui.start('#firebaseui-auth-container', uiConfig);
-

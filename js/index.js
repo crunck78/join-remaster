@@ -1,17 +1,22 @@
-window.onload = function(){
-    console.log("Window Location PATHNAME: ", window.location.pathname);
-    console.log("Window Location HREF: ", window.location.href);
-    console.log("Window Location HOST: ", window.location.host);
-    console.log("Window Location HASH: ", window.location.hash);
-    console.log("Window Location: ", window.location);
-    includeSidebar();
-    joinAuth.onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-
-        } else {
-          // No user is signed in.
-
-        }
-      });
+window.onload = async function () {
+  await includeSidebar();
+  joinAuth.onAuthStateChanged(async function (user) {
+    if (user) {
+      // User is signed in.
+      document.getElementById('loader').classList.add('d-none');
+      if (isNewUser(user)) {
+        await updateProfileImgURL("./assets/imgs/user.png")
+        await writeUserData(user.uid, user.displayName, user.email, user.photoURL);
+      }
+    } else {
+      // No user is signed in.
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    }
+    initSidebar(user);
+  });
 };
+
+function isNewUser(user) {
+  return user.metadata.creationTime == user.metadata.lastSignInTime;
+}

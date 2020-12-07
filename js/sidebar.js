@@ -1,4 +1,7 @@
-function includeSidebar() {
+const CURRENT_HREF = window.location.href;
+console.log("Current Href: ", CURRENT_HREF);
+
+async function includeSidebar() {
     var z, i, elmnt, file, xhttp;
     /* Loop through a collection of all HTML elements: */
     z = document.getElementsByTagName("*");
@@ -9,13 +12,13 @@ function includeSidebar() {
         if (file) {
             /* Make an HTTP request using the attribute value as the file name: */
             xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
+            xhttp.onreadystatechange = async function () {
                 if (this.readyState == 4) {
                     if (this.status == 200) { elmnt.innerHTML = this.responseText; }
                     if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
-                    /* Remove the attribute, and call this function once more: */
+                    /* add the attribute, and call this function once more: */
                     elmnt.removeAttribute("include-sidebar");
-                    includeSidebar();
+                    await includeSidebar();
                 }
             }
             xhttp.open("GET", file, true);
@@ -26,6 +29,30 @@ function includeSidebar() {
     }
 }
 
-function logOut() {
+function initSidebar(user) {
+    if (user) {
+        document.getElementById('page-links').classList.remove('d-none');
+        document.getElementById('user-img').classList.remove('d-none');
+        document.getElementById('user-img').setAttribute('src', user.photoURL);
+        document.getElementById('btn-logout').classList.remove('d-none');
+    } else {
+        document.getElementById('page-links').classList.add('d-none');
+        document.getElementById('user-img').classList.add('d-none');
+        document.getElementById('btn-logout').classList.add('d-none');
+    }
+}
 
+// function getCurrentHyperLink(){
+//     let allLinks = document.getElementsByClassName('link');
+//     console.log("All LINKS: ", allLinks);
+//    for(let link of allLinks){
+//        if(link.href == CURRENT_HREF){
+//            console.log(link);
+//            return link;
+//        }
+//    }
+// }
+
+function logOut(){
+    joinAuth.signOut();
 }

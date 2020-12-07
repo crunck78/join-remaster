@@ -34,9 +34,18 @@
     width: 100%;
     margin-top: 6px;
     margin-bottom: 6px;
-    color: white;
+    color: gray;
     text-align: center;
     text-decoration: none;
+}
+
+.link:hover{
+    color: white;
+}
+
+.link-active{
+    color: white;
+    border-left: 6px solid white;
 }
 
 .btn {
