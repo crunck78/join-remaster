@@ -1,5 +1,4 @@
 window.onload = function () {
-  console.log("Window Location: ", window.location);
   includeSidebar();
   joinAuth.onAuthStateChanged(function (user) {
     initSidebar(user);

@@ -1,5 +1,5 @@
-window.onload = async function () {
-  await includeSidebar();
+window.onload = function () {
+  includeSidebar();
   joinAuth.onAuthStateChanged(async function (user) {
     if (user) {
       // User is signed in.
