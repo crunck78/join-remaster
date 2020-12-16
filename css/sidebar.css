@@ -1,7 +1,7 @@
 .nav-bar {
     width: 120px;
     height: 100%;
-    background-color: blue;
+    background-color: #1E3190;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -17,9 +17,14 @@
 
 .logo {
     width: 60px;
+    height: 60px;
     object-fit: contain;
     margin-top: 6px;
     margin-bottom: 6px;
+}
+
+.logo:hover{
+    transform: scale(1.2);
 }
 
 .link-groups {

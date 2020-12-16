@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/overallApp.css">
     <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/addTask.css">
     <script src="js/overallApp.js"></script>
     <script src="js/addTask.js"></script>
     <script src="js/sidebar.js"></script>
@@ -18,13 +19,58 @@
     <div class="page-container">
         <div include-sidebar="sidebar.html"></div>
         <div class="main-page-container margin-left-32 margin-right-32">
-		  <div class="main-page-header">
-			<h2 class="header-title color-cold">Title</h2>
-			<p class="header-text">Subtitle</p>
-		  </div>
-		  <div class="main-page-content border-r16">
-			Some content
-		  </div>
+            <div class="main-page-header color-cold margin-bottom-32">
+                <h1 class="header-title margin-0">Add Task</h1>
+                <p class="header-text margin-0">Learning Management Sytem Project</p>
+            </div>
+            <div class="main-page-content border-r6 bg-cold-light margin-bottom-32">
+                <div class="add-task-form">
+                    <div class="task-inputs margin-32">
+                        <div class="task-input-container">
+                            <lable for="title">Title</lable>
+                            <input id="title" type="text">
+                        </div>
+                        <div class="task-input-container">
+                            <lable for="category">Title</lable>
+                            <select name="categories" id="category">
+                                <option value="marketing">Marketing</option>
+                                <option value="product">Product</option>
+                                <option value="sales">Sales</option>
+                                <option value="pr">PR</option>
+                                <option value="hr">HR</option>
+                                <option value="it">IT</option>
+                                <option value="private">Private</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="task-input-container">
+                            <lable for="description">Description</lable>
+                            <textarea id="description" type="message"></textarea>
+                        </div>
+                    </div>
+                    <div class="task-inputs  margin-32">
+                        <div class="task-input-container">
+                            <lable for="dueDate">Due Date</lable>
+                            <input id="dueDate" type="date">
+                        </div>
+                        <div class="task-input-container">
+                            <lable for="importance">Importance</lable>
+                            <select name="importance" id="importance">
+                                <option value="high">High</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </div>
+                        <div class="task-input-container">
+                            <lable for="assign-to">Assigne to</lable>
+                            <button id="assign-to">Add</button>
+                        </div>
+                        <div>
+                            <button id="cancel">Cancel</button>
+                            <button id="create-task">Create Task</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body><!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
@@ -40,4 +86,5 @@
 <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
 <script src="js/init_firebase.js"></script>
+
 </html>

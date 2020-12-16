@@ -1,0 +1,13 @@
+.task-input-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.add-task-form{
+    display: flex;
+    flex-direction: row;
+}
+
+.task-inputs{
+    width: 50%;
+}
