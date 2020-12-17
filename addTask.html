@@ -27,12 +27,13 @@
                 <div class="add-task-form">
                     <div class="task-inputs margin-32">
                         <div class="task-input-container">
-                            <lable for="title">Title</lable>
+                            <lable for="title"><h2 class="color-cold">Title</h2></lable>
                             <input id="title" type="text">
                         </div>
                         <div class="task-input-container">
-                            <lable for="category">Title</lable>
+                            <lable for="category"><h2 class="color-cold">Category</h2></lable>
                             <select name="categories" id="category">
+                                <option value="" disabled="" selected=""></option>
                                 <option value="marketing">Marketing</option>
                                 <option value="product">Product</option>
                                 <option value="sales">Sales</option>
@@ -44,24 +45,25 @@
                             </select>
                         </div>
                         <div class="task-input-container">
-                            <lable for="description">Description</lable>
-                            <textarea id="description" type="message"></textarea>
+                            <lable for="description"><h2 class="color-cold">Description</h2></lable>
+                            <textarea id="description" maxlength="100"></textarea>
                         </div>
                     </div>
                     <div class="task-inputs  margin-32">
                         <div class="task-input-container">
-                            <lable for="dueDate">Due Date</lable>
+                            <lable for="dueDate"><h2 class="color-cold">Due Date</h2></lable>
                             <input id="dueDate" type="date">
                         </div>
                         <div class="task-input-container">
-                            <lable for="importance">Importance</lable>
+                            <lable for="importance"><h2 class="color-cold">Importance</h2></lable>
                             <select name="importance" id="importance">
+                                <option value="" disabled="" selected=""></option>
                                 <option value="high">High</option>
                                 <option value="low">Low</option>
                             </select>
                         </div>
                         <div class="task-input-container">
-                            <lable for="assign-to">Assigne to</lable>
+                            <lable for="assign-to"><h2 class="color-cold">Assigne to</h2></lable>
                             <button id="assign-to">Add</button>
                         </div>
                         <div>
