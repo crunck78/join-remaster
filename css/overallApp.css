@@ -7,11 +7,12 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: row;
+  /*overflow: hidden;*/
 }
 
 .main-page-container {
   width: calc(100% - 120px);
-  height: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
