@@ -62,3 +62,60 @@
 #user-img{
     border-radius: 100%;
 }
+
+@media (max-width: 500px){
+    .nav-bar {
+        width: 100%;
+        height: fit-content;
+        /* background-color: #1E3190; */
+        /* display: flex; */
+        flex-direction: row;
+        /* justify-content: space-between; */
+    }
+
+    .nav-group {
+        /* width: 100%; */
+        /* height: fit-content; */
+        /* display: flex; */
+        flex-direction: row;
+        /* align-items: center; */
+    }
+
+    .link-active{
+        /* color: white; */
+        border-bottom: 2px solid white;
+        border-left: 0;
+    }
+
+    .link-groups {
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+        width: fit-content;
+        /* height: fit-content; */
+    }
+
+    .link {
+        width: fit-content;
+        font-size: 12px;
+        /* margin-top: 6px;
+        margin-bottom: 6px;
+        color: gray;
+        text-align: center;
+        text-decoration: none; */
+    }
+
+    .logo {
+        width: 32px;
+        height: 32px;
+        /* object-fit: contain;
+        margin-top: 6px;
+        margin-bottom: 6px; */
+    }
+
+    .btn {
+        width: fit-content;
+        /* margin-top: 6px;
+        margin-bottom: 6px; */
+    }
+}
